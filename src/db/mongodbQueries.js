@@ -8,7 +8,7 @@ module.exports = {
   getAllSmoothies: function(db, callback) {
     db.collection("smoothies").find({}).toArray((err, docs) => {
       if (err) {
-        console.log(err, "Failed to get smoothies.");
+        console.log(err, "Failed to get all smoothies.");
       } else {
         callback(docs);
       }
@@ -70,6 +70,30 @@ module.exports = {
           callback(doc);
         }
       });
+  },
+
+  getAllIngredients: function(db, callback) {
+    db.collection("ingredients").find({}).toArray((err, docs) => {
+      if (err) {
+        console.log(err, "Failed to get all ingredients.");
+      } else {
+        callback(docs);
+      }
+    });
+  },
+
+  getIngredientById: function(db, ingredient, callback) {
+    db.collection("ingredients").findOne(
+      {
+        "_id": new ObjectId(ingredient.id)
+      }, 
+      (err, doc) => {
+      if (err) {
+        console.log(err, "Failed to get ingredient.");
+      } else {
+        callback(doc);
+      }
+    });
   }
   
 
