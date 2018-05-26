@@ -8,14 +8,17 @@ module.exports = function(db) {
 
   router.get("/", function(req, res) {
     console.log("get all ingredients");
-    //TODO: add logic for accessing mongoDb queries
-    res.send("Ingredients Home Page");
+    dbQueries.getAllIngredients(db, (data) => {
+      res.status(200).json(data);
+    });
   });
 
   router.get("/:id", function(req, res) {
     console.log("get a single ingredient");
-    //TODO: add logic for accessing mongoDb queries
-    res.send("Single Ingredient");
+    dbQueries.getIngredientById(db, req.params, (data) => {
+    // dbQueries.getIngredientById(db, req.body, (data) => {
+      res.status(200).json(data);
+    });
   });
 
   return router;
