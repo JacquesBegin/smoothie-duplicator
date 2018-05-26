@@ -17,7 +17,7 @@ module.exports = {
       }
 
       console.log("Connected to mongoDB");
-      db = client.db('smoothieDuplicator');
+      db = client.db(process.env.MONGODB_NAME);
       initializeRoutes(db);
       startApp();
       return db;
