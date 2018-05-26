@@ -15,8 +15,12 @@ module.exports = {
     });
   },
 
-  getSmoothieById: function(db, id, callback) {
-    db.collection("smoothies").findOne({ "_id": new ObjectId(id)}, (err, doc) => {
+  getSmoothieById: function(db, smoothie, callback) {
+    db.collection("smoothies").findOne(
+      {
+        "_id": new ObjectId(smoothie.id)
+      }, 
+      (err, doc) => {
       if (err) {
         console.log(err, "Failed to get smoothie.");
       } else {
@@ -26,10 +30,11 @@ module.exports = {
   },
 
   createSmoothie: function(db, smoothie, callback) {
-    db.collection("smoothies").insertOne({
-      name: smoothie.name,
-      ingredients: smoothie.ingredients
-    }, (err, doc) => {
+    db.collection("smoothies").insertOne(
+      {
+        name: smoothie.name,
+        ingredients: smoothie.ingredients
+      }, (err, doc) => {
       if (err) {
         console.log(err, "Failed to create smoothie.");
       } else {
@@ -38,12 +43,33 @@ module.exports = {
     });
   },
 
-  editSmoothie: function(db, id, callback) {
-
+  editSmoothie: function(db, smoothie, callback) {
+    db.collection("smoothies").updateOne(
+      { 
+        "_id": new ObjectId(smoothie.id)
+      },
+      {
+        $set: {name: smoothie.name, ingredients: smoothie.ingredients}
+      }, (err, doc) => {
+      if (err) {
+        console.log(err, "Failed to edit smoothie.");
+      } else {
+        callback(doc);
+      }
+    });
   },
 
-  deleteSmoothie: function(db, id, callback) {
-
+  deleteSmoothie: function(db, smoothie, callback) {
+    db.collection("smoothies").deleteOne(
+      {
+        "_id": new ObjectId(smoothie.id)
+      }, (err, doc) => {
+        if (err) {
+          console.log(err, "Failed to delete smoothie.");
+        } else {
+          callback(doc);
+        }
+      });
   }
   
 
