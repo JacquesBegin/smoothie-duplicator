@@ -7,6 +7,7 @@ var db;
 module.exports = {
 
   connectToServer: function(startApp, initializeRoutes) {
+    console.log("process.env.MONGODB_URI: ", process.env.MONGODB_URI);
     mongodb.connect(process.env.MONGODB_URI || MONGODB_LOCAL,
       { useNewUrlParser: true }, (err, client) => {
       if (err) {
