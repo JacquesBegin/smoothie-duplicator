@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Smoothie } from '../classes/smoothie';
 
 @Component({
   selector: 'app-smoothies',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./smoothies.component.css']
 })
 export class SmoothiesComponent implements OnInit {
+
+  smoothie: Smoothie = {
+    id: 1,
+    name: 'Lime Crush'
+  };
+
 
   constructor() { }
 

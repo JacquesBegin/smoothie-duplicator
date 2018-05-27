@@ -1,3 +1,7 @@
-<p>
-  smoothies works!
-</p>
+<h2>{{smoothie.name | uppercase}}</h2>
+<div><span>id: </span>{{smoothie.id}}</div>
+<div>
+  <label>name: 
+    <input [(ngModel)]="smoothie.name" placeholder="name">
+  </label>
+</div>
