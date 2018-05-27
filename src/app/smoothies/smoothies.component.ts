@@ -26,7 +26,8 @@ export class SmoothiesComponent implements OnInit {
 
 
   getSmoothies(): void {
-    this.smoothies = this.smoothieService.getSmoothies();
+    this.smoothieService.getSmoothies()
+      .subscribe(smoothies => this.smoothies = smoothies);
   }
 
 }

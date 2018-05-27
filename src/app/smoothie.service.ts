@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Smoothie } from './classes/smoothie';
 import { Smoothies } from './mock-smoothies';
 
@@ -9,7 +10,7 @@ export class SmoothieService {
 
   constructor() { }
 
-  getSmoothies(): Smoothie[] {
-    return Smoothies;
+  getSmoothies(): Observable<Smoothie[]> {
+    return of(Smoothies);
   }
 }
