@@ -1,7 +1,10 @@
-<h2>{{smoothie.name | uppercase}}</h2>
-<div><span>id: </span>{{smoothie.id}}</div>
-<div>
-  <label>name: 
-    <input [(ngModel)]="smoothie.name" placeholder="name">
-  </label>
-</div>
+<h2>All Smoothies</h2>
+<ul class="smoothies">
+  <li *ngFor="let smoothie of smoothies" 
+    [class.selected]="smoothie === selectedSmoothie"
+    (click)="onSelect(smoothie)">
+    <span class="badge">{{smoothie.id}}</span> {{smoothie.name}}
+  </li>
+</ul>
+
+<app-smoothie-detail [smoothie]="selectedSmoothie"></app-smoothie-detail>

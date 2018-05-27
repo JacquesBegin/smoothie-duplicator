@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Smoothie } from '../classes/smoothie';
+import { SmoothieService } from '../smoothie.service';
 
 @Component({
   selector: 'app-smoothies',
@@ -8,15 +9,24 @@ import { Smoothie } from '../classes/smoothie';
 })
 export class SmoothiesComponent implements OnInit {
 
-  smoothie: Smoothie = {
-    id: 1,
-    name: 'Lime Crush'
-  };
+  selectedSmoothie: Smoothie;
+  smoothies: Smoothie[];
 
 
-  constructor() { }
+  constructor(private smoothieService: SmoothieService) { }
 
   ngOnInit() {
+    this.getSmoothies();
+  }
+
+
+  onSelect(smoothie: Smoothie): void {
+    this.selectedSmoothie = smoothie;
+  }
+
+
+  getSmoothies(): void {
+    this.smoothies = this.smoothieService.getSmoothies();
   }
 
 }
