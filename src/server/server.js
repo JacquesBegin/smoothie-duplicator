@@ -11,7 +11,7 @@ var app = express();
 app.use(bodyParser.json());
 
 
-// app.use(express.static(__dirname + '../../../dist/smoothie-duplicator'));
+app.use(express.static(__dirname + '../../../dist/smoothie-duplicator'));
 
 
 startAppServer = () => {
@@ -26,8 +26,7 @@ initializeRoutes = (db) => {
   app.use("/api/ingredients", ingredientsRoutes(db));
 
   app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname+'/../index.html'));
-    // res.sendFile(path.join(__dirname+'../../../dist/smoothie-duplicator/index.html'))
+    res.sendFile(path.join(__dirname+'../../../dist/smoothie-duplicator/index.html'))
   });
 
 }
