@@ -1,10 +1,9 @@
 <h2>All Smoothies</h2>
 <ul class="smoothies">
-  <li *ngFor="let smoothie of smoothies" 
-    [class.selected]="smoothie === selectedSmoothie"
-    (click)="onSelect(smoothie)">
-    <span class="badge">{{smoothie.id}}</span> {{smoothie.name}}
+  <li *ngFor="let smoothie of smoothies">
+    <a routerLink="/detail/{{smoothie.id}}">
+      <span class="badge">{{smoothie.id}}</span> {{smoothie.name}}
+    </a>
   </li>
 </ul>
 
-<app-smoothie-detail [smoothie]="selectedSmoothie"></app-smoothie-detail>
