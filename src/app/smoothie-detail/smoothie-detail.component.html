@@ -1,9 +1,10 @@
 <div *ngIf="smoothie">
-    <h2>{{smoothie.name | uppercase}}</h2>
-    <div><span>id: </span>{{smoothie.id}}</div>
-    <div>
-      <label>name: 
-        <input [(ngModel)]="smoothie.name" placeholder="name">
-      </label>
-    </div>
+  <h2>{{smoothie.name | uppercase}}</h2>
+  <div><span>id: </span>{{smoothie.id}}</div>
+  <div>
+    <label>name: 
+      <input [(ngModel)]="smoothie.name" placeholder="name">
+    </label>
   </div>
+</div>
+<button (click)="goBack()">go back</button>
