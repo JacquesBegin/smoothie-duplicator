@@ -9,7 +9,6 @@ import { SmoothieService } from '../smoothie.service';
 })
 export class SmoothiesComponent implements OnInit {
 
-  selectedSmoothie: Smoothie;
   smoothies: Smoothie[];
 
 
@@ -17,11 +16,6 @@ export class SmoothiesComponent implements OnInit {
 
   ngOnInit() {
     this.getSmoothies();
-  }
-
-
-  onSelect(smoothie: Smoothie): void {
-    this.selectedSmoothie = smoothie;
   }
 
 
