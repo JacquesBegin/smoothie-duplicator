@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const bodyParser = require("body-parser");
 const database = require("../db/dbConnections");
 const smoothieRoutes = require("../routes/smoothieRoutes");
@@ -10,7 +11,7 @@ var app = express();
 app.use(bodyParser.json());
 
 
-app.use(express.static(__dirname + '/dist'));
+app.use(express.static(__dirname + '../../../dist/smoothie-duplicator'));
 
 
 startAppServer = () => {
@@ -25,7 +26,7 @@ initializeRoutes = (db) => {
   app.use("/api/ingredients", ingredientsRoutes(db));
 
   app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname+'/dist/index.html'))
+    res.sendFile(path.join(__dirname+'../../../dist/smoothie-duplicator/index.html'))
   });
 
 }
