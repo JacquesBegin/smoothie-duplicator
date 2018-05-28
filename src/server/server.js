@@ -10,6 +10,8 @@ var app = express();
 app.use(bodyParser.json());
 
 
+app.use(express.static(__dirname + '/dist'));
+
 
 startAppServer = () => {
   var server = app.listen(process.env.PORT || PORT, () => {
@@ -21,6 +23,11 @@ startAppServer = () => {
 initializeRoutes = (db) => {
   app.use("/api/smoothies", smoothieRoutes(db));
   app.use("/api/ingredients", ingredientsRoutes(db));
+
+  app.get("/*", function(req, res) {
+    res.sendFile(path.join(__dirname+'/dist/index.html'))
+  });
+
 }
 
 // Connect to the mongo database, pass in the app initialization function
