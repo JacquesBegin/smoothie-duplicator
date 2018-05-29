@@ -21,10 +21,26 @@ module.exports = {
         "_id": new ObjectId(smoothie.id)
       }, 
       (err, doc) => {
+        if (err) {
+          console.log(err, "Failed to get smoothie.");
+        } else {
+          callback(doc);
+        }
+      }
+    );
+  },
+
+  getSmoothiesByName: function(db, smoothie, callback) {
+    db.collection("smoothies").find(
+      {
+        name: { $regex: smoothie.name, $options: 'i'}
+      }
+    ).toArray((err, docs) => {
       if (err) {
-        console.log(err, "Failed to get smoothie.");
+        console.log(err, "Failed to get smoothies by name");
       } else {
-        callback(doc);
+        console.log("getByName: ", docs);
+        callback(docs);
       }
     });
   },

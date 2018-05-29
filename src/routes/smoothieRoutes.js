@@ -26,6 +26,14 @@ module.exports = function(db) {
       res.status(200).json(data);
     });
   });
+
+  router.get("/name/:name", function(req, res) {
+    console.log("get smoothies by name");
+    console.log("smoothie req.params: ", req.params);
+    dbQueries.getSmoothiesByName(db, req.params, (data) => {
+      res.status(200).json(data);
+    });
+  });
   
   router.put("/:id", function(req, res) {
     console.log("updates a single smoothie");
