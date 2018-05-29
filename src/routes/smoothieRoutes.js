@@ -36,7 +36,7 @@ module.exports = function(db) {
   
   router.delete("/:id", function(req, res) {
     console.log("deletes a single smoothie");
-    dbQueries.deleteSmoothie(db, req.body, (data) => {
+    dbQueries.deleteSmoothie(db, req.params, (data) => {
       // send status code 204, this means no payload to send back but request was successful
       res.status(204).json(data);
     });
