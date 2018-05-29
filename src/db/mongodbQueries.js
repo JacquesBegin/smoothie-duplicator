@@ -62,7 +62,7 @@ module.exports = {
   deleteSmoothie: function(db, smoothie, callback) {
     db.collection("smoothies").deleteOne(
       {
-        "_id": new ObjectId(smoothie._id)
+        "_id": new ObjectId(smoothie.id)
       }, (err, doc) => {
         if (err) {
           console.log(err, "Failed to delete smoothie.");
