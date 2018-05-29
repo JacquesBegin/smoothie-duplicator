@@ -41,10 +41,27 @@ export class SmoothieService {
     );
   }
 
-  updateSmoothie(smoothie: any): Observable<any> {
+  updateSmoothie(smoothie: Smoothie): Observable<any> {
     return this.http.put(`${this.smoothiesUrl}/${smoothie._id}`, smoothie, httpOptions).pipe(
       tap(_ => this.log(`updated smoothie id=${smoothie._id}`)),
       catchError(this.handleError<any>('updateSmoothie'))
+    );
+  }
+
+  addSmoothie(smoothie: Smoothie): Observable<Smoothie> {
+    return this.http.post<Smoothie>(this.smoothiesUrl, smoothie, httpOptions).pipe(
+      tap((smoothie: Smoothie) => this.log(`added smoothie w/ id=${smoothie._id}`)),
+      catchError(this.handleError<Smoothie>('addSmoothie'))
+    );
+  }
+
+  deleteSmoothie(smoothie: Smoothie | string): Observable<Smoothie> {
+    const id = typeof smoothie === 'string' ? smoothie : smoothie._id;
+    const url = `${this.smoothiesUrl}/${id}`;
+
+    return this.http.delete<Smoothie>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted smoothie id=${id}`)),
+      catchError(this.handleError<Smoothie>('deleteSmoothie'))
     );
   }
 

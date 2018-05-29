@@ -1,9 +1,19 @@
 <h2>All Smoothies</h2>
+<div>
+  <label>Smoothie name:
+    <input #smoothieName />
+  </label>
+  <button (click)="add(smoothieName.value); smoothieName.value=''">
+    add
+  </button>
+</div>
 <ul class="smoothies">
   <li *ngFor="let smoothie of smoothies">
     <a routerLink="/detail/{{smoothie._id}}">
       <span class="badge">{{smoothie._id}}</span> {{smoothie.name}}
     </a>
+    <button class="delete" title="delete smoothie"
+    (click)="delete(smoothie)">x</button>
   </li>
 </ul>
 
