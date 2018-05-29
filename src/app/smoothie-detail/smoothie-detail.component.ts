@@ -24,13 +24,18 @@ export class SmoothieDetailComponent implements OnInit {
   }
 
   getSmoothie(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.smoothieService.getSmoothie(id)
       .subscribe(smoothie => this.smoothie = smoothie);
   }
 
   goBack(): void {
     this.location.back();
+  }
+
+  save(): void {
+    this.smoothieService.updateSmoothie(this.smoothie)
+      .subscribe(() => this.goBack());
   }
 
 }
