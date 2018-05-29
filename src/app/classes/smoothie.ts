@@ -1,4 +1,4 @@
 export class Smoothie {
-  id: number;
+  id: string;
   name: string;
 }
