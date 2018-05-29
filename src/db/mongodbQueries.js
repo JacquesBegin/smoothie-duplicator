@@ -46,7 +46,7 @@ module.exports = {
   editSmoothie: function(db, smoothie, callback) {
     db.collection("smoothies").updateOne(
       { 
-        "_id": new ObjectId(smoothie.id)
+        "_id": new ObjectId(smoothie._id)
       },
       {
         $set: {name: smoothie.name, ingredients: smoothie.ingredients}
@@ -62,7 +62,7 @@ module.exports = {
   deleteSmoothie: function(db, smoothie, callback) {
     db.collection("smoothies").deleteOne(
       {
-        "_id": new ObjectId(smoothie.id)
+        "_id": new ObjectId(smoothie._id)
       }, (err, doc) => {
         if (err) {
           console.log(err, "Failed to delete smoothie.");
