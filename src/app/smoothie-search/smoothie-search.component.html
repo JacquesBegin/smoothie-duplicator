@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Smoothie Search</h4>
+  
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  
+  <ul class="search-result">
+    <li *ngFor="let smoothie of smoothies$ | async" >
+      <a routerLink="/detail/{{smoothie.id}}">
+        {{smoothie.name}}
+      </a>
+    </li>
+  </ul>
+</div>

@@ -9,6 +9,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SmoothieSearchComponent } from './smoothie-search/smoothie-search.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
     SmoothiesComponent,
     SmoothieDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    SmoothieSearchComponent
   ],
   imports: [
     BrowserModule,

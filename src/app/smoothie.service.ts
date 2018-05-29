@@ -65,6 +65,16 @@ export class SmoothieService {
     );
   }
 
+  searchSmoothies(term: string): Observable<Smoothie[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Smoothie[]>(`${this.smoothiesUrl}/name/${term}`).pipe(
+      tap(_ => this.log(`found smoothies matching "${term}"`)),
+      catchError(this.handleError<Smoothie[]>('searchSmoothies', []))
+    );
+  }
+
   private log(message: string) {
     this.messageService.add('SmoothieService: ' + message);
   }
