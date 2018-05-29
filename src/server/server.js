@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const cors = require("cors");
 const bodyParser = require("body-parser");
 const database = require("../db/dbConnections");
 const smoothieRoutes = require("../routes/smoothieRoutes");
@@ -10,9 +9,6 @@ const PORT = 8882;
 
 var app = express();
 app.use(bodyParser.json());
-
-// TODO remove/comment out after finished testing
-app.use(cors({origin: 'http://localhost:4200'}));
 
 app.use(express.static(__dirname + process.env.STATIC_ASSETS_URL));
 
