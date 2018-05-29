@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 const bodyParser = require("body-parser");
 const database = require("../db/dbConnections");
 const smoothieRoutes = require("../routes/smoothieRoutes");
@@ -10,8 +11,10 @@ const PORT = 8882;
 var app = express();
 app.use(bodyParser.json());
 
+// TODO remove/comment out after finished testing
+app.use(cors({origin: 'http://localhost:4200'}));
 
-app.use(express.static(__dirname + '../../../dist/smoothie-duplicator'));
+app.use(express.static(__dirname + process.env.STATIC_ASSETS_URL));
 
 
 startAppServer = () => {
@@ -25,8 +28,8 @@ initializeRoutes = (db) => {
   app.use("/api/smoothies", smoothieRoutes(db));
   app.use("/api/ingredients", ingredientsRoutes(db));
 
-  app.get("/*", function(req, res) {
-    res.sendFile(path.join(__dirname+'../../../dist/smoothie-duplicator/index.html'))
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname + process.env.APP_START_URL));
   });
 
 }
