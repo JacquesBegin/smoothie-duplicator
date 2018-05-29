@@ -1,7 +1,7 @@
 <h3>Top Smoothies</h3>
 <div class="grid grid-pad">
   <a *ngFor="let smoothie of smoothies" class="col-1-4"
-    routerLink="/detail/{{smoothie.id}}">
+    routerLink="/detail/{{smoothie._id}}">
     <div class="module smoothie">
       <h4>{{smoothie.name}}</h4>
     </div>

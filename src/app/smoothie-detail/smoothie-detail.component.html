@@ -1,6 +1,6 @@
 <div *ngIf="smoothie">
   <h2>{{smoothie.name | uppercase}}</h2>
-  <div><span>id: </span>{{smoothie.id}}</div>
+  <div><span>id: </span>{{smoothie._id}}</div>
   <div>
     <label>name: 
       <input [(ngModel)]="smoothie.name" placeholder="name">
@@ -8,3 +8,4 @@
   </div>
 </div>
 <button (click)="goBack()">go back</button>
+<button (click)="save()">save</button>
