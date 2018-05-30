@@ -10,6 +10,21 @@ This project is being developed using the MEAN stack. However, the database can 
 
 
 
+# Known Issues
+
+* Data for all smoothies is being fetched twice when loading dashboard and smoothies component.
+
+* GitHub is alerting that there is a vulnerability in the hoek dependency. Recommended resolution is to update the package to a 
+
+
+
+
+
+
+
+
+# Additional Notes
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
 ## Development server
