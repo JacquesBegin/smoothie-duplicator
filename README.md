@@ -45,7 +45,7 @@ The database layer in this app has been setup to allow for easily switching data
 
 * Data for all smoothies is being fetched twice when loading dashboard and smoothies component.
 
-* The smoothie search section is currently displaying inline and it's positioning is affected by the horizontal spacing of the "Top Smoothies" section. This causes the search section to display in less than ideal positions depending on the number of top smoothies that are shown. Possible fix will be to move the search area into the tool bar or just below it on the right side of the screen.
+* The smoothie search section is currently displaying inline and it's positioning is affected by the horizontal spacing of the "Top Smoothies" section. This causes the search section to display in less than ideal positions depending on the number of top smoothies that are shown. Possible fixes could be to; set the search area styling to display as "block", move the search area into the tool bar or just below it on the right side of the screen.
 
 * GitHub is alerting that there is a vulnerability in the hoek dependency. Recommended resolution is to update the package to a version of 4.2.1 or greater.
 
