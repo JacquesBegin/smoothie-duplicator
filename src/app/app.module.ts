@@ -10,6 +10,10 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SmoothieSearchComponent } from './smoothie-search/smoothie-search.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToolbarNavComponent } from './toolbar-nav/toolbar-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,21 @@ import { SmoothieSearchComponent } from './smoothie-search/smoothie-search.compo
     SmoothieDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    SmoothieSearchComponent
+    SmoothieSearchComponent,
+    ToolbarNavComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
