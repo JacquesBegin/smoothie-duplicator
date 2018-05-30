@@ -29,9 +29,9 @@ A RESTful API has been setup to facilitate CRUD actions. The API uses the app.us
 
 
 
-## Changing the Database 
+## Abstracted Database Layer 
 
-This project is being developed using the MEAN stack. However, the database can be switched out by;
+The database layer in this app has been setup to allow for easily switching database connections. To switch out the database connection;
 
 1. Step 1: Creating a new connection file (specific to the new database)
 1. Step 2: Creating a database query file that follows the key/value pairing style of mongodbQueries.js (keys in the new file must match the keys in the mongo file to avoid altering the express routes)
