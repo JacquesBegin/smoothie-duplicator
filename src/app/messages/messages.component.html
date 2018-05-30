@@ -1,5 +1,6 @@
 <div *ngIf="messageService.messages.length">
 
+    <p class="userNotes">The section below displays logging messages for front end actions. Use the clear button to empty message cache.</p>
     <h2>Messages</h2>
     <button class="clear"
             (click)="messageService.clear()">clear</button>
