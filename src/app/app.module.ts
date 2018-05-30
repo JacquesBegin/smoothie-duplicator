@@ -13,7 +13,10 @@ import { SmoothieSearchComponent } from './smoothie-search/smoothie-search.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarNavComponent } from './toolbar-nav/toolbar-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, 
+  MatIconModule, MatListModule, MatTabsModule, MatMenuModule } from '@angular/material';
+import { TabLayoutComponent } from './tab-layout/tab-layout.component';
+import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MessagesComponent,
     DashboardComponent,
     SmoothieSearchComponent,
-    ToolbarNavComponent
+    ToolbarNavComponent,
+    TabLayoutComponent,
+    SmoothieCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,9 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
