@@ -1,5 +1,15 @@
 # SmoothieDuplicator
 
+This project is being developed using the MEAN stack. However, the database can be easily switched out by;
+
+Step 1: Creating a new connection file (specific to the new database)
+Step 2: Creating a database query file that follows the key/value pairing style of mongodbQueries.js (keys in the new file must match the keys in the mongo file to avoid altering the express routes)
+Step 3: Add to dbConnections.js: a require statement for the new connection file and a key/value to reference the require.
+Step 4: Modifing the database connection call in server.js to use the key created in step 2 (i.e. replace "mongoDbConnection" in  "database.mongoDbConnection.connectToServer(<.........>)"
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
 ## Development server
@@ -14,14 +24,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
