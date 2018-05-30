@@ -23,6 +23,11 @@ The Smoothie Duplicator application is designed to be an admin/user portal for i
 * Users can place an order to be processed (current version of app is not designed for monetary exchange or order processing, it is a portal for building an order only)
 
 
+## Express Server
+
+A RESTful API has been setup to facilitate CRUD actions. The API uses the app.use function to mount routes for smoothie/ingredient actions. Seperate routing files have been setup to handle each set of route requests.
+
+
 
 ## Changing the Database 
 
