@@ -1,0 +1,24 @@
+<mat-tab-group>
+  <mat-tab label="Admin View" class="tabBody">
+    <!-- <button mat-icon-button [matMenuTriggerFor]="adminMenu">
+      Admin Menu
+    </button>
+    <mat-menu #adminMenu="matMenu">
+      <button mat-menu-item>View Smoothies</button>
+      <button mat-menu-item>Create Smoothie</button>
+      <button mat-menu-item>Edit Smoothie</button>
+      <button mat-menu-item>Delete Smoothie</button>
+    </mat-menu> -->
+    <p class="userNotes">The section below allows the user to navigate between the admin dashboard component and the smoothies control panel. It utilizes the Angular router functionality.</p>
+    <nav>
+      <a routerLink="/dashboard">Dashboard</a>
+      <a routerLink="/smoothies">Smoothies</a>
+    </nav>
+    <router-outlet></router-outlet>
+    <app-messages></app-messages>
+  </mat-tab>
+  <mat-tab label="User View">
+    <p class="userNotes">This tab will represent the application's user/customer interface. It will allow users to select/order pre-generated smoothies, allow for custom smoothie creation, and display ingredients information.
+    </p>
+  </mat-tab>
+</mat-tab-group>
