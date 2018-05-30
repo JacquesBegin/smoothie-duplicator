@@ -1,5 +1,12 @@
 # SmoothieDuplicator
 
+The Smoothie Duplicator application is designed to be an admin/user portal for interacting with a smoothie ordering system. The ideal outcome is;
+
+### User Portal
+
+
+## Changing the Database 
+
 This project is being developed using the MEAN stack. However, the database can be easily switched out by;
 
 1. Step 1: Creating a new connection file (specific to the new database)
@@ -14,7 +21,7 @@ This project is being developed using the MEAN stack. However, the database can 
 
 * Data for all smoothies is being fetched twice when loading dashboard and smoothies component.
 
-* GitHub is alerting that there is a vulnerability in the hoek dependency. Recommended resolution is to update the package to a 
+* GitHub is alerting that there is a vulnerability in the hoek dependency. Recommended resolution is to update the package to a version of 4.2.1 or greater.
 
 
 
