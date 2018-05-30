@@ -2,6 +2,16 @@
 
 The Smoothie Duplicator application is designed to be an admin/user portal for interacting with a smoothie ordering system. The ideal outcome is;
 
+### Admin Portal
+* Admin can view a list of most popular smoothies (based off of ordering data)
+* Admin can view all available smoothies
+* Admin can view a detailed view of individual smoothies: listing ingredients and basic nutritional information
+* Admin can create new smoothies that will be available of the user portal
+* Admin can create new ingredients for smoothie creation
+* Admin can modifiy smoothie data (name, ingredients)
+* Admin can delete smoothies
+* Admin can view the number of times a smoothie was ordered
+
 ### User Portal
 * Users can view a list of most popular smoothies (based off of ordering data)
 * Users can view all available smoothies
