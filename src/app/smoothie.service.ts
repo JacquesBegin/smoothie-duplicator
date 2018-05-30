@@ -16,7 +16,8 @@ const httpOptions = {
 })
 export class SmoothieService {
 
-  private smoothiesUrl = '/api/smoothies';
+  // private smoothiesUrl = '/api/smoothies';
+  private smoothiesUrl = 'http://localhost:8882/api/smoothies';
 
 
   constructor(

@@ -10,6 +10,10 @@ const PORT = 8882;
 var app = express();
 app.use(bodyParser.json());
 
+// TODO remove/comment out after finished testing
+const cors = require("cors");
+app.use(cors({origin: 'http://localhost:4200'}));
+
 app.use(express.static(__dirname + process.env.STATIC_ASSETS_URL));
 
 
