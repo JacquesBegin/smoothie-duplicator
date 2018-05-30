@@ -3,11 +3,18 @@
 The Smoothie Duplicator application is designed to be an admin/user portal for interacting with a smoothie ordering system. The ideal outcome is;
 
 ### User Portal
+* Users can view a list of most popular smoothies (based off of ordering data)
+* Users can view all available smoothies
+* Users can view a detailed view of individual smoothies: listing ingredients and basic nutritional information
+* Users can build their own smoothie using predefined ingredients
+* Users can select single/multiple items to add to an order
+* Users can place an order to be processed (current version of app is not designed for monetary exchange or order processing, it is a portal for building an order only)
+
 
 
 ## Changing the Database 
 
-This project is being developed using the MEAN stack. However, the database can be easily switched out by;
+This project is being developed using the MEAN stack. However, the database can be switched out by;
 
 1. Step 1: Creating a new connection file (specific to the new database)
 1. Step 2: Creating a database query file that follows the key/value pairing style of mongodbQueries.js (keys in the new file must match the keys in the mongo file to avoid altering the express routes)
