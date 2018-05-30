@@ -1,6 +1,6 @@
 # SmoothieDuplicator
 
-The Smoothie Duplicator application is designed to be an admin/user portal for interacting with a smoothie ordering system. The ideal outcome is;
+The Smoothie Duplicator is a prototype application designed to be an admin/user portal for interacting with a smoothie ordering system. The ideal outcome is;
 
 ### Admin Portal
 * Admin can view a list of most popular smoothies (based off of ordering data)
