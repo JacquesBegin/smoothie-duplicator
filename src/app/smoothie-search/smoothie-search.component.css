@@ -1,8 +1,15 @@
+#search-component {
+  position: relative;
+  float: right;
+  height: 45px;
+  width: 206px;
+}
+
 .search-result li {
   border-bottom: 1px solid gray;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
-  width:195px;
+  width:194px;
   height: 16px;
   padding: 5px;
   background-color: white;
@@ -23,16 +30,31 @@
 .search-result li a:hover {
   color: white;
 }
+
 .search-result li a:active {
   color: white;
 }
+
 #search-box {
+  position: absolute;
+  right: 0;
   width: 200px;
   height: 20px;
 }
 
+#search-label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: .8rem;
+}
 
 ul.search-result {
+  position: absolute;
+  top: 26px;
+  right: 0;
   margin-top: 0;
   padding-left: 0;
+  padding-right: 0;
+
 }

@@ -1,11 +1,11 @@
 <div id="search-component">
-  <p class="userNotes">The section below allows searching for smoothies by partial/full name. It utilizes a live search functionality with the database and selecting an item from the dropdown loads it's details component.</p>
-  <h4>Smoothie Search</h4>
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
-  
+  <!-- <span class="userNotes">The section below allows searching for smoothies by partial/full name. It utilizes a live search functionality with the database and selecting an item from the dropdown loads it's details component.</span> -->
+  <input #searchBox id="search-box" 
+    (keyup)="search(searchBox.value)"/>
+  <span id="search-label">Smoothie Search</span>
   <ul class="search-result">
     <li *ngFor="let smoothie of smoothies$ | async" >
-      <a routerLink="/detail/{{smoothie._id}}">
+      <a routerLink="/detail/{{smoothie._id}}" (click)="clearDropDown(); searchBox.value=''">
         {{smoothie.name}}
       </a>
     </li>
