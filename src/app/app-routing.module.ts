@@ -7,10 +7,11 @@ import { SmoothieDetailComponent } from './smoothie-detail/smoothie-detail.compo
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  
   { path: 'smoothies', component: SmoothiesComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: SmoothieDetailComponent },
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: '/dashboard' }
 ]
 
