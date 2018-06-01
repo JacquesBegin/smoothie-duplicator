@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { SmoothieService } from '../smoothie.service';
 import { Smoothie } from '../classes/smoothie';
 
@@ -13,6 +15,8 @@ export class SmoothieDetailComponent implements OnInit {
 
   @Input() smoothie: Smoothie;
 
+  smoothie$: Observable<Smoothie>;
+
   constructor(
     private route: ActivatedRoute,
     private smoothieService: SmoothieService,
@@ -20,13 +24,10 @@ export class SmoothieDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getSmoothie();
-  }
-
-  getSmoothie(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.smoothieService.getSmoothie(id)
-      .subscribe(smoothie => this.smoothie = smoothie);
+    this.smoothie$ = this.route.paramMap.pipe(
+      switchMap((params: ParamMap) => 
+        this.smoothieService.getSmoothie(params.get('id')))
+    );
   }
 
   goBack(): void {
