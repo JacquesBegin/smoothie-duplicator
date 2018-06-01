@@ -34,7 +34,7 @@ export class SmoothieDetailComponent implements OnInit {
     this.location.back();
   }
 
-  // Not saving to database because the Observable 
+  // TODO: Not saving to database because the Observable 
   // reference is not being set to the smoothie instance variable
   save(): void {
     this.smoothieService.updateSmoothie(this.smoothie)
