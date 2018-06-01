@@ -22,12 +22,21 @@ export class SmoothieSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.addLiveSearch();
+  }
+
+  addLiveSearch(): void {
     this.smoothies$ = this.searchTerms.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       switchMap((term: string) =>
         this.smoothieService.searchSmoothies(term)),
     );
+  }
+
+  clearDropDown(): void {
+    this.smoothies$ = new Observable<Smoothie[]>();
+    this.addLiveSearch();
   }
   
 }
