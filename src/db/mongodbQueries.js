@@ -39,7 +39,6 @@ module.exports = {
       if (err) {
         console.log(err, "Failed to get smoothies by name");
       } else {
-        console.log("getByName: ", docs);
         callback(docs);
       }
     });
