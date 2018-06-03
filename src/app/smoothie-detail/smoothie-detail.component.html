@@ -1,12 +1,12 @@
 <p class="userNotes">The section below displays the data for a smoothie. The input field allows for updating a smoothie name when the save button is clicked. The "go back" button returns the user to the previous page.</p>
-<div *ngIf="smoothie$ | async as smoothie">
-  <h2>{{smoothie.name | uppercase}}</h2>
-  <div><span>id: </span>{{smoothie._id}}</div>
+<div *ngIf="smoothie$ | async as s">
+  <h2>{{s.name | uppercase}}</h2>
+  <div><span>id: </span>{{s._id}}</div>
   <div>
     <label>name: 
-      <input [(ngModel)]="smoothie.name" placeholder="name">
+      <input [(ngModel)]="s.name" placeholder="name">
     </label>
   </div>
+  <button (click)="goBack()">go back</button>
+  <button (click)="save(s)">save</button>
 </div>
-<button (click)="goBack()">go back</button>
-<button (click)="save()">save</button>
