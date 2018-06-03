@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { SmoothieService } from '../smoothie.service';
 import { Smoothie } from '../classes/smoothie';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-smoothie-detail',
@@ -17,6 +17,7 @@ export class SmoothieDetailComponent implements OnInit {
   // @Input() smoothie: Smoothie;
 
   smoothie$: Observable<Smoothie>;
+  snackBarRef: MatSnackBarRef<SimpleSnackBar>;
 
   constructor(
     private route: ActivatedRoute,
@@ -41,12 +42,17 @@ export class SmoothieDetailComponent implements OnInit {
     this.smoothieService.updateSmoothie(s)
       .subscribe((res) => {
         console.log("res: ", res);
-        // this.goBack();
+        this.displaySaveMessage("Smoothie Updated", "Dismiss");
       });
   }
 
-  // displaySaveMessage(message: string) {
+  displaySaveMessage(message: string, action: string) {
+    this.snackBarRef = this.snackBar.open(message, action, {duration: 5000});
 
-  // }
+    this.snackBarRef.onAction().subscribe(() => {
+      this.snackBarRef.dismiss();
+    })
+
+  }
 
 }
