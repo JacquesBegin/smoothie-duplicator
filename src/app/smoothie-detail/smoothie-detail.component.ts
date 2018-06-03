@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { SmoothieService } from '../smoothie.service';
 import { Smoothie } from '../classes/smoothie';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-smoothie-detail',
@@ -13,14 +14,15 @@ import { Smoothie } from '../classes/smoothie';
 })
 export class SmoothieDetailComponent implements OnInit {
 
-  @Input() smoothie: Smoothie;
+  // @Input() smoothie: Smoothie;
 
   smoothie$: Observable<Smoothie>;
 
   constructor(
     private route: ActivatedRoute,
     private smoothieService: SmoothieService,
-    private location: Location
+    private location: Location,
+    public snackBar: MatSnackBar
   ) { }
 
   ngOnInit() {
@@ -34,11 +36,17 @@ export class SmoothieDetailComponent implements OnInit {
     this.location.back();
   }
 
-  // TODO: Not saving to database because the Observable 
-  // reference is not being set to the smoothie instance variable
-  save(): void {
-    this.smoothieService.updateSmoothie(this.smoothie)
-      .subscribe(() => this.goBack());
+  save(s): void {
+    console.log("s: ", s);
+    this.smoothieService.updateSmoothie(s)
+      .subscribe((res) => {
+        console.log("res: ", res);
+        // this.goBack();
+      });
   }
+
+  // displaySaveMessage(message: string) {
+
+  // }
 
 }

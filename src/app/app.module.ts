@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarNavComponent } from './toolbar-nav/toolbar-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, 
-  MatIconModule, MatListModule, MatTabsModule, MatMenuModule } from '@angular/material';
+  MatIconModule, MatListModule, MatTabsModule, MatMenuModule,
+  MatSnackBarModule } from '@angular/material';
 import { TabLayoutComponent } from './tab-layout/tab-layout.component';
 import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.component';
 
@@ -43,7 +44,8 @@ import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.compo
     MatIconModule,
     MatListModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
