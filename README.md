@@ -23,6 +23,7 @@ The Smoothie Duplicator is a prototype application designed to be an admin/user 
 * Users can place an order to be processed (current version of app is not designed for monetary exchange or order processing, it is a portal for building an order only)
 
 
+
 ## Express Server
 
 A RESTful API has been setup to facilitate CRUD actions. The API uses the app.use function to mount routes for smoothie/ingredient actions. Seperate routing files have been setup to handle each set of route requests.
@@ -40,19 +41,19 @@ The database layer in this app has been setup to allow for easily switching data
 
 
 
+# Recent Updates
+
+* Upon updating the smoothie name, a snackbar popup displaying a saved message will appear (it includes a dismiss action).
+
+* Removes extra message being displayed upon fetching all smoothies.
+
+* The search section now displays in the top right location of the screen. This corrects the display positioning being affected by the size of the Top Smoothie section.
+
+
 
 # Known Issues
 
-* Data for all smoothies is being fetched twice when loading dashboard and smoothies component.
-
-* The smoothie search section is currently displaying inline and it's positioning is affected by the horizontal spacing of the "Top Smoothies" section. This causes the search section to display in less than ideal positions depending on the number of top smoothies that are shown. Possible fixes could be to; set the search area styling to display as "block", move the search area into the tool bar or just below it on the right side of the screen.
-
 * GitHub is alerting that there is a vulnerability in the hoek dependency. Recommended resolution is to update the package to a version of 4.2.1 or greater.
-
-
-
-
-
 
 
 
@@ -60,9 +61,13 @@ The database layer in this app has been setup to allow for easily switching data
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.3.
 
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+
 
 ## Code scaffolding
 
