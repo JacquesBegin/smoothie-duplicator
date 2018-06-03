@@ -24,7 +24,6 @@ export class SmoothieService {
     private messageService: MessageService) { }
 
   getSmoothies(): Observable<Smoothie[]> {
-    this.messageService.add('SmoothieService: fetched smoothies');
     return this.http.get<Smoothie[]>(this.smoothiesUrl)
       .pipe(
         tap(smoothies => this.log('fetched smoothies')),
