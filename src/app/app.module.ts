@@ -15,9 +15,10 @@ import { ToolbarNavComponent } from './toolbar-nav/toolbar-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, 
   MatIconModule, MatListModule, MatTabsModule, MatMenuModule,
-  MatSnackBarModule } from '@angular/material';
+  MatSnackBarModule, MatCardModule, MatChipsModule } from '@angular/material';
 import { TabLayoutComponent } from './tab-layout/tab-layout.component';
 import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.component';
+import { SmoothieCardComponent } from './smoothie-card/smoothie-card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.compo
     SmoothieSearchComponent,
     ToolbarNavComponent,
     TabLayoutComponent,
-    SmoothieCreateComponent
+    SmoothieCreateComponent,
+    SmoothieCardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,9 @@ import { SmoothieCreateComponent } from './smoothie-create/smoothie-create.compo
     MatListModule,
     MatTabsModule,
     MatMenuModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

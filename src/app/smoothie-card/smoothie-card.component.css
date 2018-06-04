@@ -1,0 +1,43 @@
+.mat-card {
+  position: relative;
+  background-color: #EEE;
+  width: 50%;
+}
+
+.mat-card:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+
+.smoothieCardRoute {
+  text-decoration: none;
+}
+
+.mat-card-header {
+  border-bottom: 1px #333 solid;
+}
+
+.mat-card-subtitle {
+  margin-bottom: .5em;
+  font-size: small;
+  color: white;
+  padding: 0.3em 0.7em;
+  background-color: #607D8B;
+}
+
+.mat-card-content {
+  margin-top: .5em;
+}
+
+.ingredientsTitle {
+  margin-bottom: 1em;
+}
+
+button.delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: gray !important;
+  color: white;
+}

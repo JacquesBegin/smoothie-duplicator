@@ -1,0 +1,21 @@
+<mat-card>
+  <a routerLink="/detail/{{smoothie._id}}" class="smoothieCardRoute">
+    <mat-card-header>
+      <mat-card-title>{{ smoothie.name }}</mat-card-title>
+      <mat-card-subtitle>{{ smoothie._id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="ingredientsTitle">Ingredients</div>
+      <mat-chip-list>
+        <mat-chip color="primary" selected="true" *ngFor="let ingre of smoothie.ingredients">
+          {{ ingre }}
+        </mat-chip>
+      </mat-chip-list>
+    </mat-card-content>
+  </a>
+  <button class="delete" title="delete smoothie"
+    (click)="delete(smoothie)">x</button>
+</mat-card>
+
+
+
