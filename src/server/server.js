@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + process.env.STATIC_ASSETS_URL));
 
 
-startAppServer = () => {
+startAppListening = () => {
   var server = app.listen(process.env.PORT || PORT, () => {
     var port = server.address().port;
     console.log(`App server running on port ${port}`);
@@ -28,11 +28,15 @@ initializeRoutes = (db) => {
   app.get("*", function(req, res) {
     res.sendFile(path.join(__dirname + process.env.APP_START_URL));
   });
+}
 
+startApp = (db) => {
+  initializeRoutes(db);
+  startAppListening();
 }
 
 // Connect to the mongo database, pass in the app initialization function
-var db = database.mongoDbConnection.connectToServer(startAppServer, initializeRoutes);
+var db = database.mongoDbConnection.connectToServer(startApp);
 
 
 
