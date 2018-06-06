@@ -6,7 +6,7 @@ var db;
 
 module.exports = {
 
-  connectToServer: function(startApp, initializeRoutes) {
+  connectToServer: function(startApp) {
     mongodb.connect(process.env.MONGODB_URI || process.env.MONGODB_LOCAL,
       { useNewUrlParser: true }, (err, client) => {
         if (err) {
@@ -19,8 +19,7 @@ module.exports = {
         // Must set an environment variable to pass in the name of the db as
         // local and remote db's may have different names
         db = client.db(process.env.MONGODB_NAME);
-        initializeRoutes(db);
-        startApp();
+        startApp(db);
         return db;
       });
   },
