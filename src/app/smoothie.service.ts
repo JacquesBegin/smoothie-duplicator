@@ -48,7 +48,7 @@ export class SmoothieService {
 
   addSmoothie(smoothie: Smoothie): Observable<Smoothie> {
     return this.http.post<Smoothie>(this.smoothiesUrl, smoothie, httpOptions).pipe(
-      tap((smoothie: Smoothie) => this.log(`added smoothie w/ id=${smoothie._id}`)),
+      tap((smoothie: Smoothie) => this.log(`added smoothie id=${smoothie._id}`)),
       catchError(this.handleError<Smoothie>('addSmoothie'))
     );
   }
