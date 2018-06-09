@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Smoothie } from '../../classes/smoothie';
+import { SmoothieService } from '../../smoothie.service';
 
 @Component({
   selector: 'app-smoothie-card',
@@ -9,10 +10,15 @@ import { Smoothie } from '../../classes/smoothie';
 export class SmoothieCardComponent implements OnInit {
 
   @Input() smoothie: Smoothie;
+  @Output() deleted = new EventEmitter<Smoothie>();
 
-  constructor() { }
+  constructor(private smoothieService: SmoothieService) { }
 
   ngOnInit() {
+  }
+
+  delete(smoothie: Smoothie) {
+    this.deleted.emit(smoothie);
   }
 
 }
