@@ -10,12 +10,15 @@
 </div>
 <ul class="smoothies">
   <li *ngFor="let smoothie of smoothies">
-    <app-smoothie-card [smoothie]="smoothie"></app-smoothie-card>
+    <app-smoothie-card 
+      [smoothie]="smoothie"
+      (deleted)="delete($event)">
+    </app-smoothie-card>
     <a routerLink="/detail/{{smoothie._id}}">
       <span class="badge">{{smoothie._id}}</span> {{smoothie.name}}
     </a>
-    <button class="delete" title="delete smoothie"
-    (click)="delete(smoothie)">x</button>
+    <!-- <button class="delete" title="delete smoothie"
+    (click)="delete(smoothie)">x</button> -->
   </li>
 </ul>
 
