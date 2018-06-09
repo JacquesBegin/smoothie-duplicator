@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SmoothiesComponent } from './smoothies/smoothies.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SmoothieDetailComponent } from './smoothie-detail/smoothie-detail.component';
+import { SmoothiesComponent } from './components/smoothies/smoothies.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SmoothieDetailComponent } from './components/smoothie-detail/smoothie-detail.component';
 
 
 

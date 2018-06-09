@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Smoothie } from '../classes/smoothie';
+import { Smoothie } from '../../classes/smoothie';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 

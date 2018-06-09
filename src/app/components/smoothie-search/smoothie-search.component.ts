@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { Smoothie } from '../classes/smoothie';
-import { SmoothieService } from '../smoothie.service';
+import { Smoothie } from '../../classes/smoothie';
+import { SmoothieService } from '../../smoothie.service';
 
 
 @Component({

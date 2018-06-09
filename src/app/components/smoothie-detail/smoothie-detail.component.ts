@@ -1,10 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { SmoothieService } from '../smoothie.service';
-import { Smoothie } from '../classes/smoothie';
+import { SmoothieService } from '../../smoothie.service';
+import { Smoothie } from '../../classes/smoothie';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material';
 
 @Component({
