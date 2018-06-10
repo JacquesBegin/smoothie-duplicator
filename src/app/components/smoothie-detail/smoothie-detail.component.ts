@@ -40,8 +40,7 @@ export class SmoothieDetailComponent implements OnInit {
   save(s): void {
     console.log("s: ", s);
     this.smoothieService.updateSmoothie(s)
-      .subscribe((res) => {
-        console.log("res: ", res);
+      .subscribe(() => {
         this.displaySaveMessage("Smoothie Updated", "Dismiss");
       });
   }
