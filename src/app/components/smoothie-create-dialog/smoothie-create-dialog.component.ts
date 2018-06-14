@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Smoothie } from '../../classes/smoothie';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
   styleUrls: ['./smoothie-create-dialog.component.css']
 })
 export class SmoothieCreateDialogComponent implements OnInit {
+
+  newSmoothie: Smoothie;
 
   constructor(
     public dialogRef: MatDialogRef<SmoothieCreateDialogComponent>,
