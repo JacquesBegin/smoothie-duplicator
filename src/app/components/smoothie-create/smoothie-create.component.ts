@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { Smoothie } from '../../classes/smoothie';
 import { SmoothieCreateDialogComponent } from '../smoothie-create-dialog/smoothie-create-dialog.component';
 import { SmoothieService } from '../../smoothie.service';
 
@@ -10,20 +11,24 @@ import { SmoothieService } from '../../smoothie.service';
 })
 export class SmoothieCreateComponent implements OnInit {
 
-  smoothieName: string;
+  smoothie: Smoothie;
 
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
     let dialogRef = this.dialog.open(SmoothieCreateDialogComponent, {
       width: '250px',
-      data: { smoothieName: this.smoothieName }
+      data: { 
+        smooothie: this.smoothie,
+        test: "test"
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       // after dialog closes the smoothie list needs to be updated
-      this.smoothieName = result;
+      this.smoothie = result;
+      console.log(this.smoothie);
     });
   }
 
