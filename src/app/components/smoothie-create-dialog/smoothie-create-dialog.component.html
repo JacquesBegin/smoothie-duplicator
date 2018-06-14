@@ -1,3 +1,11 @@
-<div>
-  {{ smoothieName }}
+<h1 mat-dialog-title>Create a Smoothie</h1>
+<div mat-dialog-content>
+  <p>Smoothie Name</p>
+  <mat-form-field>
+    <input matInput [(ngModel)]="newSmoothie">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="newSmoothie" cdkFocusInitial>Save</button>
 </div>
