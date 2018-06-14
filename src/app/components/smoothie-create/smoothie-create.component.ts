@@ -18,17 +18,17 @@ export class SmoothieCreateComponent implements OnInit {
   openDialog(): void {
     let dialogRef = this.dialog.open(SmoothieCreateDialogComponent, {
       width: '250px',
-      data: { 
-        smooothie: this.smoothie,
-        test: "test"
-      }
+      // data: { 
+      //   smooothie: this.smoothie,
+      //   test: "test"
+      // }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       // after dialog closes the smoothie list needs to be updated
       this.smoothie = result;
-      console.log(this.smoothie);
+      console.log("1", result);
     });
   }
 
