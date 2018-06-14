@@ -15,10 +15,11 @@ import { ToolbarNavComponent } from './components/toolbar-nav/toolbar-nav.compon
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, 
   MatIconModule, MatListModule, MatTabsModule, MatMenuModule,
-  MatSnackBarModule, MatCardModule, MatChipsModule } from '@angular/material';
+  MatSnackBarModule, MatCardModule, MatChipsModule, MatDialogModule } from '@angular/material';
 import { TabLayoutComponent } from './components/tab-layout/tab-layout.component';
 import { SmoothieCreateComponent } from './components/smoothie-create/smoothie-create.component';
 import { SmoothieCardComponent } from './components/smoothie-card/smoothie-card.component';
+import { SmoothieCreateDialogComponent } from './components/smoothie-create-dialog/smoothie-create-dialog.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SmoothieCardComponent } from './components/smoothie-card/smoothie-card.
     ToolbarNavComponent,
     TabLayoutComponent,
     SmoothieCreateComponent,
-    SmoothieCardComponent
+    SmoothieCardComponent,
+    SmoothieCreateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,11 @@ import { SmoothieCardComponent } from './components/smoothie-card/smoothie-card.
     MatMenuModule,
     MatSnackBarModule,
     MatCardModule,
-    MatChipsModule
+    MatChipsModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    SmoothieCreateDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
