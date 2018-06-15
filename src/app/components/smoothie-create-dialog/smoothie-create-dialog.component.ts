@@ -1,6 +1,7 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Smoothie } from '../../classes/smoothie';
+import { Ingredient } from '../../classes/ingredient';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { Smoothie } from '../../classes/smoothie';
 })
 export class SmoothieCreateDialogComponent implements OnInit {
 
-  newSmoothie: Smoothie;
+  @Input() newSmoothie: Smoothie;
+  smoothieName: string;
+  smoothieIngredients: Array<Ingredient>;
 
   constructor(
     public dialogRef: MatDialogRef<SmoothieCreateDialogComponent>,
@@ -18,6 +21,10 @@ export class SmoothieCreateDialogComponent implements OnInit {
 
     onNoClick(): void {
       this.dialogRef.close();
+    }
+
+    save(): void {
+
     }
 
   ngOnInit() {
