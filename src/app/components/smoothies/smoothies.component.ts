@@ -34,7 +34,7 @@ export class SmoothiesComponent implements OnInit {
   // need to add a smoothie instance not just a name
   // need to check for at least 1 ingredient
   add(name: string): void {
-    name = name.trim();
+    // name = name.trim();
     if (!name) { return; }
     this.smoothieService.addSmoothie({ name } as Smoothie)
       .subscribe(smoothie => {
