@@ -55,7 +55,6 @@ export class SmoothiesComponent implements OnInit {
     this.snackBarRef.onAction().subscribe(() => {
       this.add(smoothie.name);
     })
-
   }
 
 }
