@@ -11,7 +11,7 @@ import { Ingredient } from '../../classes/ingredient';
 })
 export class SmoothieCreateDialogComponent implements OnInit {
 
-  @Input() newSmoothie: Smoothie;
+  newSmoothie: Smoothie;
   smoothieName: string;
   smoothieIngredients: Array<Ingredient>;
 
@@ -19,13 +19,9 @@ export class SmoothieCreateDialogComponent implements OnInit {
     public dialogRef: MatDialogRef<SmoothieCreateDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
-    onNoClick(): void {
-      this.dialogRef.close();
-    }
-
-    save(): void {
-
-    }
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
   ngOnInit() {
   }
