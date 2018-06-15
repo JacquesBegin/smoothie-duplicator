@@ -7,7 +7,9 @@
   <button (click)="add(smoothieName.value); smoothieName.value=''">
     add
   </button>
-  <app-smoothie-create></app-smoothie-create>
+  <app-smoothie-create
+  (added)="add($event)">
+  </app-smoothie-create>
 </div>
 <ul class="smoothies">
   <li *ngFor="let smoothie of smoothies">
