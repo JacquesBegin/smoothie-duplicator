@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Smoothie } from '../../classes/smoothie';
 import { SmoothieCreateDialogComponent } from '../smoothie-create-dialog/smoothie-create-dialog.component';
@@ -11,6 +11,7 @@ import { SmoothieCreateDialogComponent } from '../smoothie-create-dialog/smoothi
 export class SmoothieCreateComponent implements OnInit {
 
   smoothie: Smoothie;
+  @Output() added = new EventEmitter<Smoothie>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -18,8 +19,7 @@ export class SmoothieCreateComponent implements OnInit {
     let dialogRef = this.dialog.open(SmoothieCreateDialogComponent, {
       width: '250px',
       // data: { 
-      //   smooothie: this.smoothie,
-      //   test: "test"
+      //   smoothie: this.smoothie 
       // }
     });
 
@@ -28,6 +28,7 @@ export class SmoothieCreateComponent implements OnInit {
       // after dialog closes the smoothie list needs to be updated
       this.smoothie = result;
       console.log("1", result);
+      this.added.emit(result);
     });
   }
 
