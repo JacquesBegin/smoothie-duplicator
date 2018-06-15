@@ -2,7 +2,6 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { Smoothie } from '../../classes/smoothie';
 import { SmoothieCreateDialogComponent } from '../smoothie-create-dialog/smoothie-create-dialog.component';
-import { SmoothieService } from '../../smoothie.service';
 
 @Component({
   selector: 'app-smoothie-create',
